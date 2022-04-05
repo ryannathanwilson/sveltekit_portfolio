@@ -4,7 +4,7 @@
 <div id="intro" class="section">
   <div class="image">
     <img
-      src="https://res.cloudinary.com/ryannathanwilson/image/upload/c_scale,w_1200/v1648230361/rnw/profile_BW.webp"
+      src="https://res.cloudinary.com/ryannathanwilson/image/upload/c_scale,w_1200/v1648230361/rnw/portrait-bg-white.webp"
       alt="B/W profile of Ryan Nathan Wilson"
     />
   </div>
