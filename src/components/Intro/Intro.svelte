@@ -1,12 +1,22 @@
 <script>
+  import { mode } from '../../store';
+  let theme;
+  mode.subscribe((m) => {
+    theme = m;
+  });
+  let imageSrcDark =
+    'https://res.cloudinary.com/ryannathanwilson/image/upload/c_scale,w_1200/v1648230361/rnw/portrait-bg-black.webp';
+  let imageSrcLight =
+    'https://res.cloudinary.com/ryannathanwilson/image/upload/c_scale,w_1200/v1648230361/rnw/portrait-bg-white.webp';
 </script>
 
 <div id="intro" class="section">
   <div class="image">
-    <img
-      src="https://res.cloudinary.com/ryannathanwilson/image/upload/c_scale,w_1200/v1648230361/rnw/portrait-bg-white.webp"
-      alt="B/W profile of Ryan Nathan Wilson"
-    />
+    {#if theme}
+      <img src={imageSrcLight} alt="B/W profile of Ryan Nathan Wilson" />
+    {:else}
+      <img src={imageSrcDark} alt="B/W profile of Ryan Nathan Wilson" />
+    {/if}
   </div>
   <div class="intro-text">
     <p>
@@ -29,6 +39,7 @@
   .image {
     grid-area: 'left';
     overflow: hidden;
+    aspect-ratio: 0.75;
   }
   img {
     width: 100%;

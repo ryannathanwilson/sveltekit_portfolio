@@ -3,6 +3,8 @@
   import Header from '$components/layout/Header.svelte';
   import Footer from '$components/layout/Footer.svelte';
   let isOpen: boolean = false;
+  import { mode } from '../store';
+  import BlogLayout from './blog/_blogLayout.svelte';
   const toggleMenu = () => {
     isOpen = !isOpen;
   };
@@ -10,7 +12,7 @@
 
 <Header {toggleMenu} {isOpen} />
 <div class="wrapper" class:open={isOpen}>
-  <slot />
+  <slot {mode} />
 </div>
 <Footer />
 
